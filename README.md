@@ -43,3 +43,12 @@ curl --location --request POST 'http://localhost:8081/interactWithDocker' \
 --header 'Content-Type: application/json' \
 --data-raw '["docker cp ab36bd398d8b:/app /Users/manojkpanchapakesan/appContent"]'
 ```
+
+API to fetch file contents
+
+```
+curl --location --request POST 'http://localhost:8081/fetchContentsFromDocker' \
+--header 'Content-Type: application/json' \
+--data-raw '["ab36bd398d8b", "/app"]
+'
+```
