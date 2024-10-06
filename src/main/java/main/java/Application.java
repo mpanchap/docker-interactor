@@ -8,6 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+/**
+ * Main class for the Spring Application
+ * @author manojkpanchapakesan
+ *
+ */
 @SpringBootApplication
 public class Application {
 

@@ -19,6 +19,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Controller class to accept arguments to interact with Docker Instances
+ * @author manojkpanchapakesan
+ *
+ */
+
 @RestController
 public class CommandLineController {
 
@@ -28,6 +34,11 @@ public class CommandLineController {
 	}
 	
 	
+	/**
+	 * Method to get the file content
+	 * @param cliArguments
+	 * @return
+	 */
 	@GetMapping("/getDockerContent")
 	public String getFileContent(@RequestParam("cliArgs") String cliArguments) {
 		try {
@@ -41,6 +52,11 @@ public class CommandLineController {
 	}	
 	
 	
+	/**
+	 * Get method to fetch the output for the docker arguments
+	 * @param dockerArguments
+	 * @return
+	 */
 	@GetMapping("/getDockerResponse")
 	public String interactWithDockerInstance(@RequestParam("cliArgs") String dockerArguments) {
 	        String dirName = "commandsDir";
@@ -92,6 +108,11 @@ public class CommandLineController {
 	}
 	
 	
+	/**
+	 * Post method to run the docker arguments in parallel
+	 * @param arguments
+	 * @return
+	 */
 	@PostMapping("/interactWithDocker")
 	public String interact(@RequestBody String[] arguments) {
 	        String dirName = "commandsDir";
@@ -156,6 +177,11 @@ public class CommandLineController {
 	    return "SUCCESS";
 	}
 	
+	/**
+	 * Method to delete the directory and the files inside once the docker operations are done
+	 * @param path
+	 * @throws IOException
+	 */
 	public static void deleteDirectory(Path path) throws IOException {
         // Check if the directory exists
         if (!Files.exists(path)) {
